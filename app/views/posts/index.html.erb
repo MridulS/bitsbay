@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+  <p id="logo">BitsBay</p>
+
+    <p class="navbar-text navbar-right"><button  type="button" class="btn btn-success"><%= link_to 'New Post', new_post_path %></button></p>
+  </div>
+</nav>
+
+<div class="row">
+    <% @posts.reverse.each do |post| %>
+    <div class="col-md-4" >
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= post.title.split.map(&:capitalize).join(' ') %></h3>
+    </div>
+    <div class="panel-body">
+      ₹ <%= post.price %><br>
+       
+        
+      <div class="panel-footer">
+        <%= post.details %><br>
+      </div>
+        <%= post.name.split.map(&:capitalize).join(' ') %><br>
+        <%= post.hostel.upcase %> - <%= post.room %> <br>
+        <b> Contact No: </b><%= post.mobile %><br>
+      
+
+    </div>
+  </div>
+</div>
+      <% end %>
+
+</div>
